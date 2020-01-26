@@ -1,0 +1,104 @@
+control_configurations:
+  - name: "watch"
+    components:
+    - {description: "", hardware_interface: "intera_hw", controller: "js_pub"}
+  - name: "plan"
+    components:
+    - {description: "", hardware_interface: "intera_hw", controller: "js_pub"}
+    - {description: "", hardware_interface: "intera_hw", controller: "thor_planner"}
+
+  - name: "joint_teach_teleop_cfg"
+    components:
+      - description: ""
+        hardware_interface: "intera_hw"
+        controller        : "js_pub"
+      - description: ""
+        hardware_interface: "intera_hw"
+        controller        : "joint_teach_teleop_ctrl"
+  - name: "cart_teach_teleop_cfg"
+    components:
+      - description: ""
+        hardware_interface: "intera_hw"
+        controller        : "js_pub"
+      - description: ""
+        hardware_interface: "intera_hw"
+        controller        : "cart_teleop_ctrl"
+
+
+intera_hw:
+  type: "itia/control/InteraHwIfaceNodelet"
+  joint_names: 
+  - right_j0
+  - right_j1
+  - right_j2
+  - right_j3
+  - right_j4
+  - right_j5
+  - right_j6
+
+  remap_source_args:
+  - "/intera_hw/thor_planner/follow_joint_trajectory/cancel"
+  - "/intera_hw/thor_planner/follow_joint_trajectory/feedback"
+  - "/intera_hw/thor_planner/follow_joint_trajectory/goal"
+  - "/intera_hw/thor_planner/follow_joint_trajectory/result"
+  - "/intera_hw/thor_planner/follow_joint_trajectory/status"
+  remap_target_args:
+  - "/sawyer/follow_joint_trajectory/cancel"
+  - "/sawyer/follow_joint_trajectory/feedback"
+  - "/sawyer/follow_joint_trajectory/goal"
+  - "/sawyer/follow_joint_trajectory/result"
+  - "/sawyer/follow_joint_trajectory/status"
+
+  feedback_joint_state_topic: "/robot/joint_states"
+  command_joint_state_topic: "/robot/limb/right/joint_command"
+  sampling_period: 0.005
+  diagnostic_period: 0.1
+  feedback_joint_state_timeout: 20
+  maximum_missing_messages: 150 #default 50 causes errors
+
+  js_pub:
+    type:         ros/control/JointStatePublisher
+    controlled_joint:
+    - right_j0
+    - right_j1
+    - right_j2
+    - right_j3
+    - right_j4
+    - right_j5
+    - right_j6
+
+  joint_teach_teleop_ctrl:
+    type: "itia/control/JointTeleopController"
+    controlled_joints:
+    - right_j0
+    - right_j1
+    - right_j2
+    - right_j3
+    - right_j4
+    - right_j5
+    - right_j6
+
+  cart_teleop_ctrl:
+    type: "itia/control/CartTeleopController"
+    base_link: "right_arm_base_link"
+    tool_link: "right_hand"
+    controlled_joints:
+    - right_j0
+    - right_j1
+    - right_j2
+    - right_j3
+    - right_j4
+    - right_j5
+    - right_j6
+
+  thor_planner:
+    type: "thor/PrefilterPosVelEffController"
+    controlled_joint:
+    - right_j0
+    - right_j1
+    - right_j2
+    - right_j3
+    - right_j4
+    - right_j5
+    - right_j6
+    spline_order: 2

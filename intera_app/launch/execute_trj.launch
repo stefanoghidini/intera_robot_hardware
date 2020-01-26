@@ -1,0 +1,17 @@
+<launch>
+  <arg name="trj" default="load" />
+  <arg name="robot" default="sawyer" />
+  <arg name="log_name" default="load"/>
+  <arg name="rep" default="1"/>
+  <arg name="load_params" default="true"/>
+  <arg name="rescale" default="true"/>
+
+  
+  <rosparam if="$(arg load_params)" file="$(find intera_app)/config/predefined_position.yaml" command="load"/>
+
+  <param name="/rescale" value="$(arg rescale)"/>
+  <param name="/trj_name" value="$(arg trj)"/>
+  <param name="/group_name" value="$(arg robot)"/>
+  <node pkg="moveit_planning_helper" type="execute_trj_from_param" name="moveit_ur10_execute_trj" output="screen">
+  </node>
+</launch>

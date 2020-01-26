@@ -1,0 +1,9 @@
+
+<library path="lib/libintera_hardware_interface">
+  <class name="itia/control/InteraHwIfaceNodelet" type="itia::control::InteraHwIfaceNodelet" base_class_type="nodelet::Nodelet">
+    <description>
+      itia::control::InteraHwIfaceNodelet
+    </description>
+  </class>
+</library>
+
