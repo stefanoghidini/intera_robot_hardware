@@ -1,5 +1,8 @@
 <launch>
-  <rosparam command="load" file="$(find ur_app)/config/binary_logger.yaml" />
+  <arg name="test_name" default="b"/>
+  <param name="/binary_logger/test_name" value="$(arg test_name)"/>
+
+  <rosparam command="load" file="$(find intera_app)/config/binary_logger.yaml" />
   <node pkg="nodelet" type="nodelet" name="binary_logger"  args="manager" output="screen"/>
   <node pkg="binary_logger" type="automatic_logger_node" name="automatic_logger_node" output="screen"/>
 </launch>

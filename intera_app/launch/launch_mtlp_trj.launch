@@ -1,0 +1,32 @@
+<launch> 
+
+<!--  <node name="A1" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.375612 0.653366 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+<!--  <node name="A2" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.149240 0.651200 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+<!--  <node name="A3" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 -0.06631 0.647582 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+
+<!--  <node name="A4" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.264759 0.478446 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+<!--  <node name="A5" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.038984 0.474546 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+
+<!--  <node name="O1" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.380110 0.305204 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+<!--  <node name="O0" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.154401 0.301857 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+<!--  <node name="O2" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 -0.07138 0.298570 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+
+<!--  <node name="B1" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.385867 -0.045817 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+<!--  <node name="B2" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.158180 -0.047734 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+<!--  <node name="B3" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 -0.06721 -0.051592 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+
+<!--  <node name="B4" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.269876 0.128282 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+<!--  <node name="B5" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.043531 0.125228 -o 0.5 0.5 0.5 0.5 -t right_hand" />-->
+
+  <node name="Prova" pkg="intera_examples" type="go_to_cartesian_pose.py" args="-p 0.7 0.05 0.55  -o 0.5 0.5 0.5 0.5 -t right_hand" />
+
+
+
+
+
+
+
+
+
+
+</launch>

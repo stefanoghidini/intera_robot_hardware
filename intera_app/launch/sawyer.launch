@@ -8,7 +8,10 @@
   <node pkg="itia_configuration_manager" type="configuration_manager" name="controller_manager" output="screen"/> 
   <node pkg="itia_configuration_manager" type="configuration_user_interface" name="configuration_user_interface" output="screen"/> 
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find sawyer_description)/urdf/sawyer.urdf.xacro electric_gripper:=true" />
+
   <node name="test_robot_state_publisher" type="robot_state_publisher" pkg="robot_state_publisher" output="screen">
   <remap from="joint_states" to="robot/joint_states"/>
   </node>
+
+  <!-- <node name="ft_topic_convert" tpye="ft_topic_convert" pkg="intera_utils" output="screen"/> -->
 </launch>

@@ -23,24 +23,23 @@ binary_logger:
   # Type of the topic that need to be logged (supported JointState, Imu, PoseStamped, WrenchStamped, Float64MultiArray)
   topic_type: 
     - 'JointState'
-
   
 
   JointState:
     # List of the topic to be acquired 
     topic_names:
-      - '/ur10/joint_states'  # feedback motor/link
-      - '/ur_hi/command'     # target per pos link
-      - 'joint_pos_target'
+      - '/robot/joint_states'  # feedback motor/link
+      - '/joint_target'     # target per pos link
+      #- 'joint_pos_target'
       
     # Acquisition time (to be specified for each topic)
     duration:
       - 400 #[s]
       - 400 #[s]
-      - 400 #[s]
+      #- 400 #[s]
 
     # Message decimation (to be specified for each topic)
     decimation:
       - 1
       - 1
-      - 1
+      #- 1
